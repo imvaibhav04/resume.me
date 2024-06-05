@@ -1,0 +1,196 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Vaibhav Raj} \\[7.5pt]
+\href{https://github.com/imvaibhav04}{\raisebox{-0.05\height}\faGithub\ imvaibhav04} \ $|$ \ 
+\href{https://linkedin.com/in/vaibhavraj04}{\raisebox{-0.05\height}\faLinkedin\ vaibhavraj04} \ $|$ \  
+\href{mailto:vaibhav04raj@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ vaibhav04raj@gmail.com} \ $|$ \ 
+\href{tel:+918102373046}{\raisebox{-0.05\height}\faMobile \ +918102373046} \ $|$ \ 
+{\raisebox{-0.05\height} Greater Noida} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{ Career Objective}
+Seeking a Software Development role where I can contribute to organizational growth while enhancing my skills and knowledge. I thrive in collaborative environments where I can learn and excel, aiming to become a valuable asset to the team.
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Virtual Internship(Bharat Intern)} & \hfill Sep 2023 - Oct 2023 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{During my virtual internship at Bharat Intern, I completed frontend development tasks using HTML, CSS, and JavaScript. I created and styled web pages, ensured cross-browser compatibility, and optimized website performance. This experience enhanced my frontend development skills and my ability to work independently in a remote setting.}  \\
+\end{tabularx}
+
+
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{E-Commerce Website} & \hfill \href{https://some-link.com}{Github} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{• Contributed to the development of product content, ensuring accurate and compelling product descriptions
+ and images.
+\item[--]  • Implemented features for adding, editing, and deleting products, demonstrating a keen understanding of
+ database management using MySQL.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Spam Mail Prediction- Machine Lerning} & \hfill \href{https://github.com/imvaibhav04/spam_mail_prediction_using_ML}{Github} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{ • Analyzed 10000 users’ dataset to detect spam emails using various Machine Learning Generative models.
+ \item[--]• Evaluated the best technique as Naive Bayes using model selection and validated the model using ROC curves.} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2021 - present & B.tech (CSAI) at GL Bajaj Institute of Technology and Management, Greater Noida. \hfill \normalsize (CGPA: 7.04) \\
+
+
+2020 & Class 12th (Central Board of Secondary Education) \hfill  (Percentage:73.0) \\
+
+2018 & Class 10th (Central Board of Secondary Education)  \hfill  (Percentage:86.8) \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Programming Languages:} &  \normalsize{C++, C, Python, JavaScript, SQL}\\
+\textbf{Technologies/Frameworks:} &  \normalsize{HTML5, CSS3, JavaScript, React.js}\\
+\textbf{Developer Tools:} &  \normalsize{VS Code, IntelliJ, Canva, Github}\\
+\textbf{Course Work:} &  \normalsize{DBMS, OOPs, Software Development, Computer Networks, OS, Data
+ Structures, and Algorithms(DSA)}\\
+  \end{tabularx}
+\section{Certifications}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+ • Mastering in Data Structure and Algorithms: Coding Ninjas \href{https://certificate.codingninjas.com/view/2c56b45f31894da8}{\textit{click here}} \\
+• C++: Coding Ninjas \href{https://certificate.codingninjas.com/view/cdab417996cf4e80}{\textit{click here}} \\
+ \end{tabularx}
+  
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
